@@ -351,8 +351,8 @@ class immediate_index {
 
             // Write it, but as individually encoded variable byte calls. We'll put the b-gap first
             size_t bytes_written = vbyte_encode(doc_gap, write_block.tail.struct_ptr() + write_offset);
-            head_block.head.advance_tail_byte_offset(bytes_written);
-            bytes_written = vbyte_encode(word_gap, write_block.tail.struct_ptr() + write_offset);
+            write_offset += bytes_written;
+            bytes_written += vbyte_encode(word_gap, write_block.tail.struct_ptr() + write_offset);
             head_block.head.advance_tail_byte_offset(bytes_written); 
         }
         // If we go round the loop, the next doc_gap will be 1, this next
