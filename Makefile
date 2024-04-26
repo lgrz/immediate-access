@@ -5,7 +5,7 @@ all:
 
 debug:
 	g++ --std=c++17 -march=native -Wall -Wextra -g stream_index.cpp -o bin/d_stream_index
-	g++ --std=c++17 -march=native -Wall -Wextra -g query.cpp -o bin/d_query
+	g++ --std=c++17 -march=native -Wall -Wextra -g conjunctive_query.cpp -o bin/d_conjunctive_query
 	g++ --std=c++17 -march=native -Wall -Wextra -g disjunctive_query.cpp -o bin/d_disjunctive_query
 
 clean:
